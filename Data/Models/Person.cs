@@ -8,16 +8,22 @@ namespace RandomMockUpTest.Data.Models
 {
     public class Person
     {
+        private readonly Random rnd = new();
+
         public int Id { get; set; }
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string Email => SetEmail();
-        public DateTime Birthdate { get; set; }
+        public int Age { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; } = null!;
 
         private string SetEmail()
         {
-            return $"{FirstName}.{LastName}@mail.com";
+            string[] mailServices = "hotmail, gmail, aol, yahoo, yandex, outlook".Split(", ");
+            string[] mailDotEnd = ".com, .se, .dk, .us, .fi".Split(", ");
+
+            return $"{FirstName}.{LastName}@{mailServices[rnd.Next(0, mailServices.Length)]}{mailDotEnd[rnd.Next(0, mailDotEnd.Length)]}";
         }
 
         public override string ToString()
@@ -26,7 +32,8 @@ namespace RandomMockUpTest.Data.Models
             sb.AppendLine($"=>Info  Nr.{Id}:");
             sb.AppendLine($"\tName: {FirstName} {LastName}.");
             sb.AppendLine($"\tEmail: {Email}.");
-            sb.AppendLine($"\tBirthdate: {Birthdate.ToString("yyyy/dd/MM")}.");
+            sb.AppendLine($"\tAge: {Age}{(Age > 1 ? " years" : " year")} old.");
+            sb.AppendLine($"\tBirthdate: {DateOfBirth.ToString("yyyy/dd/MM")}.");
             sb.AppendLine($"\tGender: {Gender}.");
 
             return sb.ToString();

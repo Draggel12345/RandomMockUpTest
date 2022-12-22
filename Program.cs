@@ -3,6 +3,6 @@ using RandomMockUpTest.Data.Services;
 
 PersonService service = new();
 
-List<Person> people = service.CreateRandomPeopleByAmount(16);
+List<Person> people = service.CreateRandomPeopleByAmount(15);
 
 people.ForEach(p => Console.WriteLine(p));
