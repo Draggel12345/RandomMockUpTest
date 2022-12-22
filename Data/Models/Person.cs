@@ -29,12 +29,12 @@ namespace RandomMockUpTest.Data.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"=>Info  Nr.{Id}:");
-            sb.AppendLine($"\tName: {FirstName} {LastName}.");
-            sb.AppendLine($"\tEmail: {Email}.");
-            sb.AppendLine($"\tAge: {Age}{(Age > 1 ? " years" : " year")} old.");
-            sb.AppendLine($"\tBirthdate: {DateOfBirth.ToString("yyyy/dd/MM")}.");
-            sb.AppendLine($"\tGender: {Gender}.");
+            sb.AppendLine($"==Info=>Nr.{Id}");
+            sb.AppendLine($"\tName: {FirstName} {LastName}");
+            sb.AppendLine($"\tE-mail: {(Age > 12 ? Email : "no email.")}");
+            sb.AppendLine($"\tAge: {Age}{(Age > 1 ? " years" : " year")} old");
+            sb.AppendLine($"\tBirthdate: {DateOfBirth.ToString("yyyy/dd/MM")}");
+            sb.AppendLine($"\tGender: {Gender}");
 
             return sb.ToString();
         }
