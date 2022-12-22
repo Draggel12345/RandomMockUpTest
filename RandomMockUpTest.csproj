@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="RandomPersonInfoGenerator">
-      <HintPath>..\RandomPersonGenerator\obj\Debug\RandomPersonInfoGenerator.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\NET-Frameworks Assignments\RandomPersonInfoGenerator\RandomPersonInfoGenerator.csproj" />
   </ItemGroup>
 
 </Project>
